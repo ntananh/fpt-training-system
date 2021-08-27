@@ -1,0 +1,151 @@
+@import url(./common.css);
+
+.wrapper {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    background-image: url(../../resourses/image/login/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+}
+
+.login {
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 57px 5px #d7d5d5;
+    padding: 30px 30px;
+}
+
+.banner-wrapper {
+    flex: 1;
+    background-image: url("../../resourses/image/login/banner-svg.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+}
+
+.form-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.form__heading h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    padding-top: 10px;
+    color: var(--very-dark-blue);
+}
+
+.form__heading p {
+    padding: 10px 0 0;
+    font-size: 1.2rem;
+    color: var(--grayish-blue);
+    text-align: center;
+}
+
+
+.form__main {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 30px;
+}
+
+.form-group .form-lable {
+    align-self: flex-start;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    border: none;
+    border-bottom: 3px solid var(--very-light-gray);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.form-input:focus {
+    border-bottom: 3px solid var(--blue);
+}
+
+.form-message {
+    align-self: flex-start;
+    font-size: 1.3rem;
+    color: var(--red);
+}
+
+
+.form-submit {
+    width: 250px;
+    height: 30px;
+    margin: 30px auto;
+    font-size: 1.6rem;
+    color: #333;
+    background-color: rgb(210, 210, 235);
+    border: none;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    background-color: var(--primary-color);  
+    color: #fff;
+}
+
+.form__footer {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 30px;
+
+}
+
+.form__footer .line {
+    border-bottom: 1px solid rgba(97, 95, 95, 0.753);
+    width: 100%;
+    position: relative;
+}
+
+.line span {
+    position: absolute;
+    font-size: 1.2rem;
+    top: -8px;
+    left: 155px;
+    background: #fff;
+}
+
+.login-method {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+
+
+.social-media {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.social-media img {
+    height: 100%;
+    width: 100%;
+}

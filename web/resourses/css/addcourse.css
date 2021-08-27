@@ -1,0 +1,148 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 26, 2021, 10:41:32 PM
+    Author     : Tan Anh
+*/
+
+@import url(../css/common.css);
+
+.wrapper {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 15px;
+    margin-top: 60px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 20px 2px #eaeaea;   
+}
+
+.wrapper .heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 40px;
+}
+
+.form-wrapper {
+    display: flex;
+
+}
+
+.sub-section {
+    flex: 1;
+    margin: 20px 10px 0 10px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 510px;
+    height: 510px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-section:last-child {
+    border: 1px solid #333;
+}
+
+.section-heading {
+    position: absolute;
+    left: 10px;
+    font-size: 1.4rem;
+    display: inline-block;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #020202d6;
+
+}
+
+
+/*Form*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 15px 10px;
+}
+
+.form-group:first-of-type{ 
+    margin: 0 10px;
+}
+
+
+.form-group .form-lable {
+    position: absolute;
+    font-size: 1.4rem;
+    /* top: -15px; */
+    z-index: 99;
+    transform: translateY(-50%);
+    left: 16px;
+    background: #fff;
+    display: inline-block;
+}
+
+.form-group .form-input {
+    position: relative;
+    font-size: 1.6rem;
+    outline: none;
+    height: 41px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+input[type=text]:focus {
+    border: 1px solid var(--primary-color);
+}
+
+
+.trainer-wrapper {
+    position: relative;
+    border: 1px solid #333;
+    margin: 20px 10px 0 10px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 510px;
+    height: 510px;
+    display: flex;
+    flex-direction: column;
+}
+
+.select-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    font-size: 1.4rem;
+}
+
+.select-wrapper select {
+    margin-top: 10px;
+    height: 40px;
+}
+
+/*Button submit*/
+.btn-action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-action .form-submit {
+    width: 190px;
+    height: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 10px;
+    font-size: 1.6rem;
+    color: #333;
+    background-color: rgb(210, 210, 235);
+    border: none;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    background-color: var(--primary-color);  
+    color: #fff;
+}
