@@ -79,7 +79,7 @@
             <main class="main">
                 <div class="wrapper">
                     <h2 class="heading">Edit Course</h2>
-                    <form method="POST" action="CourseController?ac=save">
+                    <form method="POST" action="CourseController?ac=update&id=${c.id}">
                         <div class="form-wrapper">
                             <div class="sub-section">
                                 <div class="form-group">
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-lable" for="end_date">End (date):</label>
-                                    <input class="form-input"  value="${c.end_date}" type="date" id="end_date" name="end_date">
+                                    <input class="form-input" value="${c.end_date}" type="date" id="end_date" name="end_date">
                                 </div>
 
                                 <div class="form-group">

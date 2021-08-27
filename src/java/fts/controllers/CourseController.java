@@ -60,7 +60,7 @@ public class CourseController extends HttpServlet {
                 break;
             }
             case "update": {
-                updateCourse(request, response);
+                updateCourse(request, response, id);
                 break;
             }
             case "delete": {
@@ -142,20 +142,18 @@ public class CourseController extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    public static void updateCourse(HttpServletRequest request, HttpServletResponse response)
+    public static void updateCourse(HttpServletRequest request, HttpServletResponse response, String id)
             throws ServletException, IOException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
+        int cid = Integer.parseInt(request.getParameter("id")); 
         String name = request.getParameter("name");
         int topic_id = Integer.parseInt(request.getParameter("topic_id"));
         int cate_id = Integer.parseInt(request.getParameter("cate_id"));
         String start_date = request.getParameter("start_date");
         String end_date = request.getParameter("end_date");
-        String created_date = dateFormat.format(new Date());
         String description = request.getParameter("description");
 
         CourseModel cm = new CourseModel();
-        if (cm.addCourse(name, start_date, end_date, created_date, description, topic_id, cate_id)) {
+        if (cm.updateCourse(cid, name, start_date, end_date, description, topic_id, cate_id)) {
             response.sendRedirect("course.jsp");
         } else {
             response.sendRedirect("error.jsp");
@@ -166,7 +164,7 @@ public class CourseController extends HttpServlet {
     public static void deleteCourse(HttpServletRequest request, HttpServletResponse response, String id)
             throws ServletException, IOException {
         int cid = Integer.parseInt(request.getParameter("id"));
-
+        
         CourseModel courseModel = new CourseModel();
         if (courseModel.delCourse(cid)) {
             response.sendRedirect("course.jsp");

@@ -99,28 +99,21 @@ public class CourseModel {
 
     }
 
-    public boolean updateCourse(String name, String start_date, String end_date, String created_date, String description, int cate_id, int topic_id) {
+    public boolean updateCourse(int id, String name, String start_date, String end_date, String description, int cate_id, int topic_id) {
         int result = 0;
+        
         Connection conn = DBConnection.getConnection();
 
-        String sql = "INSERT INTO tblCourse ("
-                + "_name,"
-                + "_start_date,"
-                + "_end_date,"
-                + "_course_created_date, "
-                + "_description, "
-                + "_category_id, "
-                + "_topic_id) VALUES"
-                + "(?, ?, ?, ?, ?, ?, ?)";
+        String sql = "UPDATE tblCourse SET _name=?, _start_date=?, _end_date=?, _description=?, _topic_id=?, _category_id=? WHERE _id=?;";
         try {
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, name);
             statement.setString(2, start_date);
             statement.setString(3, end_date);
-            statement.setString(4, created_date);
-            statement.setString(5, description);
-            statement.setInt(6, cate_id);
-            statement.setInt(7, topic_id);
+            statement.setString(4, description);
+            statement.setInt(5, cate_id);
+            statement.setInt(6, topic_id);
+            statement.setInt(7, id);
 
             result = statement.executeUpdate();
 

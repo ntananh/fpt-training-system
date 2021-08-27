@@ -101,7 +101,7 @@
                                         </select>
                                     </div>
 
-<!--                                    <div class="select-wrapper">
+                                    <!-- <div class="select-wrapper">
                                         <label class="form-lable" for="trainers">Choose a trainer:</label>
                                         <select id="trainers" name="trainer_id">
                                             <option value="1">Bui Duy Linh</option>
