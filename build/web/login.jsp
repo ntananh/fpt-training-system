@@ -3,11 +3,14 @@
     Created on : Mar 16, 2018, 12:46:48 PM
     Author     : Md. Rezve Hasan
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
     <head>
+        <c:if test="${not empty sessionScope['username']}">
+            <c:redirect url="course.jsp"/>
+        </c:if>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -19,7 +22,7 @@
         <link href="resourses/css/bootstrap.css" rel="stylesheet">  
         <!-- Custom styles for this template -->
         <link href="resourses/css/login.css" rel="stylesheet">
-        
+
     </head>
 
     <body class="text-center">
@@ -35,9 +38,12 @@
                     <div class="form__heading">
                         <h2>Wellcome to FTS</h2>
                         <p>Education is a commitment to excellence in Teaching and Learning.</p>
+                        <c:if test="${not empty requestScope.message}">
+                            <c:out value="${requestScope.message}"/>
+                        </c:if>
                     </div>
 
-                    <form class="form__main" action="login" method="post">
+                    <form class="form__main" action="LoginController" method="post">
                         <div class="form-group">
                             <label class="form-lable" for="username">Username</label>
                             <input class="form-input" type="text" name="username" id="username">

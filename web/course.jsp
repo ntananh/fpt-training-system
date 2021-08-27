@@ -6,8 +6,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
+        <c:if test="${empty sessionScope['username']}">
+            <jsp:forward page="login.jsp"> 
+                <jsp:param name="message" value="Login first"/> 
+            </jsp:forward>
+        </c:if>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -32,6 +39,7 @@
             <!--Header-->
             <header class="header">
                 <div class="header__label">
+
                     <span>Manage</span>
                     <span class="section">Courses</span>
                 </div>
@@ -45,8 +53,9 @@
 
                     <li class="list-items">
                         <div class="avatar">
-                            <a href="#">
+                            <a href="logout.jsp">
                                 <img src="./resourses/image/course/avatar.jpg" alt="avatar">
+
                             </a>
                         </div>
                     </li>
@@ -59,6 +68,7 @@
                     <a href="#">
                         <img src="./resourses/image/course/logo.png" alt="FPT Learning">
                     </a>
+
                 </div>
 
                 <div class="sidebar__wrapper">
@@ -72,7 +82,7 @@
 
 
                     <div class="user__wrapper">
-
+                        <h1>Username: ${sessionScope.username}</h1>
                     </div>
                 </div>
             </aside>
@@ -84,7 +94,7 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                <!-- Search section-->
+                                    <!-- Search section-->
                                 </div>
                                 <div class="col-sm-6">
                                     <a href="CourseController?ac=add" class="btn btn-success"><span>Add New Course</span></a>					
@@ -105,19 +115,19 @@
                                 <c:forEach var="course" items="${courses}">
                                     <tr>
                                         <td>${course.name}</td>
-                                        
+
                                         <c:forEach var="topic" items="${topics}">
                                             <c:if test="${course.topic_id == topic.id}">
                                                 <td>${topic.name}</td>
                                             </c:if>
                                         </c:forEach> 
-                                                
+
                                         <c:forEach var="cate" items="${cates}">
                                             <c:if test="${course.cate_id == cate.id}">
                                                 <td>${cate.name}</td>
                                             </c:if>
                                         </c:forEach>         
-                                                
+
                                         <td>${course.description}</td>
                                         <td>
                                             <a href="CourseController?ac=delete&id=${course.id}" alt="delete" class="delete"><ion-icon name="trash-outline"></ion-icon></a>

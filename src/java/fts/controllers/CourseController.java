@@ -88,6 +88,7 @@ public class CourseController extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    // Action add new course
     public static void addCourse(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -124,6 +125,7 @@ public class CourseController extends HttpServlet {
 
     }
 
+    // Action edit course
     public static void editCourse(HttpServletRequest request, HttpServletResponse response, String id)
             throws ServletException, IOException {
         int cid = Integer.parseInt(request.getParameter("id"));

@@ -103,6 +103,25 @@ public class UserModel {
         return users;
     }
 
-    
-    
+    public boolean validate(String username, String password) {
+        boolean status = false;
+
+        String sql = "SELECT * FROM tblUser Where _username= ? AND _password = ?";
+        Connection conn = DBConnection.getConnection();
+
+        try {
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, username);
+            statement.setString(2, password);
+            
+            ResultSet rs = statement.executeQuery();
+            status = rs.next();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UserModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return status;
+    }
+
 }

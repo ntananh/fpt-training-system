@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <c:if test="${empty sessionScope['username']}">
+            <c:redirect url="login.jsp" />
+        </c:if>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -43,7 +46,7 @@
 
                     <li class="list-items">
                         <div class="avatar">
-                            <a href="#">
+                            <a href="logout.jsp">
                                 <img src="./resourses/image/course/avatar.jpg" alt="avatar">
                             </a>
                         </div>
